@@ -12,7 +12,6 @@ namespace DiscordAppTemplate.Services.Discord
 {
     public sealed class DiscordClientWrapper : ServiceWrapper
     {
-        [Inject] private readonly IConfiguration Configuration;
         [Inject] private readonly DiscordOptions DiscordOptions;
 
         public DiscordShardedClient DiscordClient;
