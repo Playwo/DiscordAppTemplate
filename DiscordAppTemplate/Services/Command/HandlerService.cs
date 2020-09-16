@@ -3,7 +3,6 @@ using Common.Services;
 using Discord.WebSocket;
 using DiscordAppTemplate.Commands;
 using DiscordAppTemplate.Options;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Qmmands;
 
@@ -13,7 +12,6 @@ namespace DiscordAppTemplate.Services
     {
         [Inject] private readonly DiscordShardedClient DiscordClient;
         [Inject] private readonly ICommandService CommandService;
-        [Inject] private readonly IConfiguration Configuration;
         [Inject] private readonly CommandOptions CommandOptions;
 
         protected override ValueTask InitializeAsync()

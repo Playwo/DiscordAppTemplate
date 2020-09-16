@@ -4,7 +4,6 @@ using Discord;
 using Discord.WebSocket;
 using DiscordAppTemplate.Extensions;
 using DiscordAppTemplate.Options;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
