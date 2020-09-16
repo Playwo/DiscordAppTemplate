@@ -46,10 +46,11 @@ namespace DiscordAppTemplate
 
         public static IHost CreateHost(string[] args)
             => new HostBuilder()
+                .UseConsoleLifetime()
                 .ConfigureHostConfiguration(configBuilder =>
                 {
                     configBuilder.AddCommandLine(args);
-                    configBuilder.AddEnvironmentVariables();
+                    configBuilder.AddEnvironmentVariables("DOTNET_");
                 })
                 .ConfigureAppConfiguration((context, configBuilder) =>
                 {
