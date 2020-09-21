@@ -20,20 +20,18 @@ namespace DiscordAppTemplate
         [SuppressMessage("Style", "IDE1006")]
         public static async Task Main(string[] args)
         {
-            var host = CreateHost(args);
+            using var host = CreateHost(args);
             var logger = host.Services.GetRequiredService<ILogger<Program>>();
 
             if (!File.Exists(ConfigFilePath) && !await TryCreateAppConfigAsync())
             {
                 logger.LogCritical($"Could not read or create app config file at path {ConfigFilePath}");
-                host.Dispose();
                 return;
             }
 
             if (!await host.Services.ValidateOptionsAsync(Assembly.GetExecutingAssembly()))
             {
                 logger.LogCritical("Config File Validation Failed!");
-                host.Dispose();
                 return;
             }
 
